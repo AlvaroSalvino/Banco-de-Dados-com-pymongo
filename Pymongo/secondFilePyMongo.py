@@ -33,5 +33,19 @@ result = db.profile_user.insert_many(user_profile_user)
 
 print(f"\nColeções armazenadas no mongoDB")
 collections = db.list_collection_names()
+
+# db['profiles'].drop()
+
 for collection in collections:
     print(collection)
+
+for post in posts.find():
+    pprint.pprint(post)
+
+# print(posts.delete_one({"author": "Mike"}))
+# print(db.profile_user.drop())
+
+client.drop_database('test')
+
+print(db.list_collection.name())
+
